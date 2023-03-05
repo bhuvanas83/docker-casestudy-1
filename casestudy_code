@@ -1,0 +1,13 @@
+sudo apt update
+sudo apt install docker.io -y
+sudo docker pull ubuntu
+sudo docker run -itd -p 80:80 ubuntu
+sudo docker images
+sudo docker tag 74f2314a03de bhuvanas83/abc-inc
+sudo docker images
+sudo docker login
+sudo docker push bhuvanas83/abc-inc
+#Using the dockerfile image is created
+sudo docker build . -t apache_image:1.0
+sudo docker run --name myapache -d -p 81:80 apache_image:1.0
+sudo docker ps
